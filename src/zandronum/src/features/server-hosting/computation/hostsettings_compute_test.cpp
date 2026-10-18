@@ -100,7 +100,7 @@ TEST(HostSettings, ThePlayerLimitIsCorrectedRatherThanTrusted)
 
 TEST(HostSettings, ATypedNameIsTheName)
 {
-	EXPECT_EQ("Talha's game", ComputeHostDisplayName("Talha's game"));
+	EXPECT_EQ("Robin's game", ComputeHostDisplayName("Robin's game"));
 }
 
 TEST(HostSettings, AnEmptyOrBlankNameFallsBackToTheDefault)
