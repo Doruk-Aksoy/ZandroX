@@ -11,7 +11,7 @@ import { runScenarioIfMain, compareNetplay, writeTemplateFile, FREEDOOM2, MUTE }
 import { withLockedInstance } from "../src/play.mjs";
 import { resolveEngine } from "../src/launch.mjs";
 import { withNetCopies, addPlayerStarts, netJudge } from "../src/netacs.mjs";
-import { SNAP_SERVER_CVARS } from "../src/netplay.mjs";
+import { SNAPSHOT_MODE } from "../src/netplay.mjs";
 import * as cap from "../src/capture.mjs";
 
 export const FIRST_TID = 100, CHECK_SCRIPT = 1;
@@ -135,7 +135,7 @@ export async function compareOffline({ name, wad: data, iwad = FREEDOOM2, port, 
 }
 
 // [Doruk-Aksoy] The legacy netcode and the snapshot overhaul, whose server cvars are its settings until they become the defaults.
-export const CONFIGS = [{ name: "lan", players: 1, observers: 1 }, { name: "snap", players: 1, observers: 1, serverCvars: SNAP_SERVER_CVARS }];
+export const CONFIGS = [{ name: "lan", players: 1, observers: 1 }, { name: "snap", players: 1, observers: 1, serverCvars: SNAPSHOT_MODE }];
 
 // [Doruk-Aksoy] Every machine reads the flags it joined with, the late joiner too, each by script 1's CLIENTSIDE copy.
 export const judgeNetplay = netJudge({ steps: [{ script: CHECK_SCRIPT, tags: ["flags"] }], late: [{ script: CHECK_SCRIPT, tags: ["flags"] }], by: "server",
